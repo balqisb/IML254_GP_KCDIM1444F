@@ -1,0 +1,297 @@
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="resource/icon/icon2.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+
+
+<div class="sidenav">
+  <a href="products.html">All</a>
+  <a href="romance.html">Romance</a>
+  <a href="horror.html">Horror</a>
+  <a href="thriller.html">Thriller</a>
+  <a href="scifi.html">Science-fiction</a>
+  <a href="comedy.html">Comedy</a>
+  <a href="slice.html">Slice of life</a>
+  <a href="drama.html">Drama</a>
+  <a href="fantasy.html">Fantasy</a>
+  <a href="stationary.html">Stationary</a>
+
+
+</div>
+
+<div id="mainContent" class="main"> 
+  <div class="title"> All Products </div>
+
+  <div class="container">
+    <div class="image-container">
+      <a href="romance.html">
+        <img src="resource/image/book.jpg" alt="Button Image" style="width:80%">
+      </a> 
+    </div>
+    <div class="image-container">
+      <a href="stationary.html">
+        <img src="resource/image/stationaries.jpg" alt="Button Image" style="width:80%">
+      </a>
+    </div>
+  </div>
+
+
+
+<br><br>
+
+<div class="text"> Book </div>
+
+<div class="row"> 
+  <div class="column">
+    <img src="resource/image/1.png" alt="book" style="width:80%">  
+  </div>
+  <div class="column">
+    <img src="resource/image/9.png" alt="book" style="width:80%"> 
+  </div>
+  <div class="column">
+    <img src="resource/image/10.png" alt="book" style="width:80%">  
+  </div>
+  <div class="column">
+    <img src="resource/image/16.png" alt="book" style="width:80%"> 
+  </div>
+  <a href="romance.html" class="btn">More</a></div>
+<br><br>
+
+<div class="text"> Stationaries </div>
+
+<div class="row">
+  <div class="column2">
+    <img src="resource/image/a.png" alt="stationaries" style="width:60%">  
+  </div>
+  <div class="column2">
+    <img src="resource/image/c.png" alt="stationaries" style="width:60%"> 
+  </div>
+  <div class="column2">
+    <img src="resource/image/d.png" alt="stationaries" style="width:60%">  
+  </div>
+  <div class="column2">
+    <img src="resource/image/e.png" alt="stationaries" style="width:60%"> 
+  </div>
+  <div class="column2">
+    <img src="resource/image/h.png" alt="stationaries" style="width:60%"> 
+  </div>
+  <a href="stationary.html" class="btn">More</a></div>
+</div>
+</div><br><br>
+
+
+
+<script>
+  function toggleNav() {
+    var sidenav = document.getElementById("mySidenav");
+    var main = document.getElementById("mainContent");
+    sidenav.classList.toggle("open");
+    main.classList.toggle("shifted");
+  }
+        let slideIndex = 0;
+        showSlides();
+
+        function plusSlides(n) {
+            clearInterval(slideInterval);
+            showSlides(slideIndex += n);
+            slideInterval = setInterval(showSlides, 5000); // Reset interval after manual change
+        }
+
+        function currentSlide(n) {
+            clearInterval(slideInterval);
+            showSlides(slideIndex = n - 1);
+            slideInterval = setInterval(showSlides, 5000); // Reset interval after manual change
+        }
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        let slideInterval = setInterval(showSlides, 2000);
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var lastUpdatedElement = document.getElementById("last-updated");
+            var currentDate = new Date();
+            var formattedDate = currentDate.toLocaleDateString("en-US", {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            lastUpdatedElement.textContent = formattedDate;
+        });
+
+	 const books = [
+            { title: "When Grumpy Met Sunshine ", image: "resource/image/1.png", link: "romance.html" },
+            { title: "Kimia", image: "resource/image/2.png", link: "romance.html" },
+            { title: "Dia Tetap Sempurna", image: "resource/image/3.png", link: "romance.html" },
+            { title: "Sang Dewi", image: "resource/image/4.png", link: "horror.html" },
+	    { title: "Under the Whispering Door", image: "resource/image/5.png", link: "horror.html" },
+            { title: "How to Sell a Haunted House", image: "resource/image/6.png", link: "horror.html" },
+            { title: "The Fellowship of the Ring", image: "resource/image/7.png", link: "fantasy.html" },
+            { title: "Nirnama ", image: "resource/image/8.png", link: "fantasy.html" },
+            { title: "The Chronicles of Narnia", image: "resource/image/9.png", link: "fantasy.html" },
+            { title: "Terima Kasih, Luka", image: "resource/image/10.png", link: "slice.html" },
+            { title: "Rumah Tak Mesti Bahagia", image: "resource/image/11.png", link: "slice.html" },
+            { title: "The Travelling Cat Chronicles", image: "resource/image/12.png", link: "slice.html" },
+            { title: "Kuala Terengganu in 7 Days", image: "resource/image/13.png", link: "comedy.html" },
+            { title: "Such A Fun Age", image: "resource/image/14.png", link: "comedy.html" },
+            { title: "The Idiot", image: "resource/image/15.png", link: "comedy.html" },
+            { title: "Stay Awake", image: "resource/image/16.png", link: "thriller.html" },
+            { title: "My Murder", image: "resource/image/17.png", link: "thriller.html" },
+            { title: "9 Nyawa", image: "resource/image/18.png", link: "thriller.html" },
+            { title: "1511H (KOMBAT)", image: "resource/image/19.png", link: "scifi.html" },
+            { title: "The Dead Djinn Universe", image: "resource/image/20.png", link: "scifi.html" },
+            { title: "The Expanse", image: "resource/image/21.png", link: "scifi.html" },
+            { title: "Romeo and Juliet", image: "resource/image/22.png", link: "drama.html" },
+            { title: "Death as Salesman", image: "resource/image/23.png", link: "drama.html" },
+            { title: "Andai Itu Takdirnya", image: "resource/image/24.png", link: "drama.html" },
+        ];
+
+	    const stationery = [
+            { title: "Calculator", image: "resource/image/a.png", link: "stationary.html" },
+            { title: "Correction Tape", image: "resource/image/b.png", link: "stationary.html" },
+            { title: "Notebook", image: "resource/image/c.png", link: "stationary.html" },
+            { title: "Pen", image: "resource/image/d.png", link: "stationary.html" },
+            { title: "Pen", image: "resource/image/e.png", link: "stationary.html" },
+            { title: "Pencil", image: "resource/image/f.png", link: "stationary.html" },
+            { title: "Ruler", image: "resource/image/g.png", link: "stationary.html" },
+            { title: "Scissors", image: "resource/image/h.png", link: "stationary.html" },
+        ];
+
+         // Search functionality
+        document.querySelector(".search-bar button").addEventListener("click", function() {
+            const searchTerm = document.querySelector(".search-bar input").value.toLowerCase();
+            const bookResults = books.filter(item => item.title.toLowerCase().includes(searchTerm));
+            const stationeryResults = stationery.filter(item => item.title.toLowerCase().includes(searchTerm));
+            const searchResults = [...bookResults, ...stationeryResults];
+            displaySearchResults(searchResults);
+        });
+
+        function displaySearchResults(results) {
+            const bookListContainer = document.querySelector(".book-list");
+            bookListContainer.innerHTML = ""; // Clear current book list
+
+            if (results.length > 0) {
+                results.forEach(item => {
+                    const itemElement = document.createElement("div");
+                    itemElement.className = "book"; // You might want to rename this class to something more generic like 'item'
+                    itemElement.innerHTML = `
+                        <a href="${item.link}">
+                            <img src="${item.image}" alt="${item.title}">
+                        </a>
+                    `;
+                    bookListContainer.appendChild(itemElement);
+                });
+            } else {
+                bookListContainer.innerHTML = "<p>No items found.</p>";
+            }
+        }
+
+        // Initial display of all items
+        displaySearchResults([...books, ...stationery]);
+   
+</script>
+</div>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>BOOKWORMS</p>
+            <p>Kedah, Malaysia</p>
+            <p>Phone: (+60)172956188</p>
+            <p>Email: bookwormsC2001@gmail.com</p>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/profile.php?id=61561303924777" target="_blank">Facebook</a>
+            <a href="https://x.com/Bookworms26891" target="_blank">Twitter</a>
+            <div class="last-updated-container">
+                Last Updated: <span id="last-updated"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="scroll-to-top" onclick="scrollToTop()">
+            <img src="resource/icon/arrow.jpg" alt="Top arrow">
+        </button>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lastUpdatedElement = document.getElementById("last-updated");
+        let lastUpdatedDate = new Date('2024-06-24T12:00:00');
+        let formattedDate = lastUpdatedDate.toLocaleDateString("en-US", {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        lastUpdatedElement.textContent = formattedDate;
+    });
+
+    window.onscroll = function() {
+        var scrollButton = document.querySelector('.scroll-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

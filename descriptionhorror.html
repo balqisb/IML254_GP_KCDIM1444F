@@ -1,0 +1,87 @@
+<html>
+<head>
+<title> Book Description </title>
+<link type="text/css" rel="stylesheet" href="resource/css/style.css">
+</head>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+<body style="background-color:#C19A6B;">
+
+    <div class="container">
+        <div class="image-container">
+            <img src="resource/image/4.png" alt="Book Image">
+        </div>
+        <div class="padtext">
+        <h1> <li> Title: Sang Dewi </li><br>
+             <li>Author: Anuar Darwish </li><br>
+             <li>Date of published: May 1,, 2024 </li><br>
+             <li>Genres: Horror </li><br>
+             <li>Physical description: 356 pages, paperback </li><br>
+             <li>ISBN: 9789670874890 (ISBN10: 9670874890) </li><br>
+             <li>Language: Malay </li> 
+             <li>Price: RM 27.00 </li></h1>
+
+        </div>
+    </div>           
+<div class="desc-container">
+ <p style="text-align: center;"> 
+Bila dua dunia bertembung BLURB <br><br>
+Tular di FYP TikTok tentang keindahan sebuah rumah inap desa tepi sungai yang terletak di kaki Gunung Jerai, membuatkan Misha teruja untuk ke sana. Dia mengajak Edrina, Anita dan Lily untuk turut serta. Tetapi baru saja menjejakkan kaki, Edrina sudah berasa tidak sedap hati. Dia merasakan ada yang misteri tentang tempat itu.<br><br>
+"Batu-batu sungai ni diikat dengan rambut..." - Anita <br><br>
+Percutian yang menyeronokkan bertukar tragedi apabila fenomena kepala air melanda secara tiba-tiba. Edrina dibawa hanyut arus deras dan dianggap mati lemas oleh penduduk sekitar. Badrisyah, pengurus rumah inap itu rasa bertanggungjawab dan berusaha untuk mencari.<br><br>
+"Orang dulu panggil sungai ni dengan nama perenggang ada sebabnya. Dikatakan
+aliran sungai ni tak ubah seperti putaran jam, berpusing dari angka dua belas bertemu angka dua belas semula. Hulu bertemu dengan hulu semula. Ruang sama tapi masa terpisah." - Badrisyah<br><br>
+Berjayakah Edrina ditemui? Benarkah gadis itu sudah meninggal dunia atau sebenarnya hanyut ke dunia lain?<br><br>
+"Orang sebelah sana tak boleh datang ke sini. Bapak cakap kita hanya berkongsi sungai
+tapi bukan tanah.” - Nyiur </p>
+</div>
+
+    <div class="btn-group">
+        <button class="btn cart-btn" onclick="addToCart()">Add to cart</button>
+    </div>
+
+<script>
+
+function addToCart(price) {
+    const product = {
+        id: '9789670874890', 
+        name: 'Sang Dewi',
+        sellPrice: 27.00, 
+        imageUrl: 'resource/image/4.png', 
+        item: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].item += 1;
+    } else {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Product added to cart!');
+}
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+<head>
+<title> Book Description </title>
+<link type="text/css" rel="stylesheet" href="resource/css/style.css">
+</head>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+<body style="background-color:#C19A6B;">
+
+    <div class="container">
+        <div class="image-container">
+            <img src="resource/image/19.png" alt="Book Image">
+        </div>
+        <div class="padtext">
+        <h1> <li> Title: 1511H (KOMBAT) </li><br>
+             <li>Author: Faisal Tehrani </li><br>
+             <li>Date of published: June 15, 2004 </li><br>
+             <li>Genres: Science-fiction, Novels </li><br>
+             <li>Physical description: 423 pages, paperback </li><br>
+             <li>ISBN: 9789676115973 (ISBN10: 9676115975) </li><br>
+             <li>Language: Malay </li> 
+             <li>Price: RM 27.55 </li> </h1>
+
+        </div>
+    </div>           
+<div class="desc-container">
+ <p style="text-align: center;"> 
+Mendengung, menjunam, menyengat.<br>
+Lebah sempat menggodekkan ekor merenung sebelum terbang.<br>
+Tuan persiden rebah, kejang, terus koma.<br><br>
+
+Kombat 1511 H. Ini zaman depan, tahun 2087 Masihi<br>
+yang menuntut perang cara teknologi.<br><br>
+
+Bio-bots lipas dan belalang<br>
+melitup langit dalam awanan aneh<br>
+mengepak, menyerak gelombang.<br>
+Satelit kucar-kacir, komputer huru-hara, radar kacau-bilau.<br><br>
+
+Cyborg, cypher, sarcos, Ababil, Mikraj, hidrogen sianida,<br>
+mikrob pemakan logam, laser, segala macam lagi<br>
+yang dipacu teknologi, teknologi, teknologi.<br><br>
+
+Syarifah Nusaybah, dia hartawan global, strategis licik<br>
+yang jasadnya sentiasa diburu peluru,<br>
+yang tahu kejayaan harus dibina dengan teknologi,<br>
+bahkan sungguh-sungguh percaya kejayaan yang puncak<br>
+adalah dengan futuwwah.<br>
+Etika yang mencuci jiwa, memperteguh roh:<br>
+Bahawa manusia semata-mata hamba Tuhan.<br>
+Semata-mata... </p>
+</div>
+
+    <div class="btn-group">
+        <button class="btn cart-btn" onclick="addToCart()">Add to cart</button>
+    </div>
+
+<script>
+
+function addToCart(price) {
+    const product = {
+        id: '9789676115973', 
+        name: '1511H (KOMBAT)',
+        sellPrice: 27.55,
+        imageUrl: 'resource/image/19.png',
+        item: 1 
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].item += 1;
+    } else {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Product added to cart!');
+}
+</script>
+
+
+</body>
+</html>

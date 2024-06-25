@@ -1,0 +1,204 @@
+<html>
+<head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <div class="cart-section">
+                <div class="product-lists">
+                    <p class="section-heading">Your Cart</p>
+                    <div class="cart">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="checkout-section">
+        <div class="checkout-box">
+            <p class="text">Your Total Bill,</p>
+            <h1 class="bill">RM 0.00</h1>
+            <a href="checkout.html" class="checkout-btn">Checkout</a>
+        </div>
+    </div>
+
+    <script>
+        let totalBill = 0;
+
+        const setProducts = (name) => {
+            const element = document.querySelector('.cart');
+            let data = JSON.parse(localStorage.getItem(name));
+
+            if (data == null || data.length === 0) {
+                element.innerHTML = `<img src="resource/image/emptycart.png" class="empty-img" alt="Empty Cart">`;
+            } else {
+                element.innerHTML = ''; // Clear previous content
+                data.forEach(product => {
+                    element.innerHTML += createSmallCards(product);
+                    totalBill += product.sellPrice * product.item;
+                });
+                updateBill();
+                setupEvents(name);
+            }
+        };
+
+        const updateBill = () => {
+            let billPrice = document.querySelector('.bill');
+            billPrice.textContent = `RM ${totalBill.toFixed(2)}`;
+        };
+
+        const setupEvents = (name) => {
+            const counterMinus = document.querySelectorAll('.counter-btn.decrement');
+            const counterPlus = document.querySelectorAll('.counter-btn.increment');
+            const counts = document.querySelectorAll('.item-count');
+            const price = document.querySelectorAll('.sm-price');
+            const deleteBtn = document.querySelectorAll('.sm-delete-btn');
+
+            let products = JSON.parse(localStorage.getItem(name));
+
+            counterMinus.forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    if (counts[i].textContent > 1) {
+                        counts[i].textContent--;
+                        totalBill -= products[i].sellPrice;
+                        price[i].textContent = `RM ${(products[i].sellPrice * counts[i].textContent).toFixed(2)}`;
+                        updateBill();
+                        products[i].item = parseInt(counts[i].textContent);
+                        localStorage.setItem(name, JSON.stringify(products));
+                    }
+                });
+            });
+
+            counterPlus.forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    counts[i].textContent++;
+                    totalBill += products[i].sellPrice;
+                    price[i].textContent = `RM ${(products[i].sellPrice * counts[i].textContent).toFixed(2)}`;
+                    updateBill();
+                    products[i].item = parseInt(counts[i].textContent);
+                    localStorage.setItem(name, JSON.stringify(products));
+                });
+            });
+
+            deleteBtn.forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    products = products.filter((_, index) => index !== i);
+                    localStorage.setItem(name, JSON.stringify(products));
+                    setProducts(name); // Reload products after deletion
+                });
+            });
+        };
+
+        function createSmallCards(product) {
+            return `
+            <div class="sm-product">
+                <img src="${product.imageUrl}" class="sm-product-img" alt="${product.name}">
+                <div class="sm-text">
+                    <p class="sm-product-name">${product.name}</p>
+                    <p class="sm-des">${product.description}</p>
+                </div>
+                <div class="item-counter">
+                    <button class="counter-btn decrement">-</button>
+                    <p class="item-count">${product.item}</p>
+                    <button class="counter-btn increment">+</button>
+                </div>
+                <p class="sm-price">RM ${(product.sellPrice * product.item).toFixed(2)}</p>
+                <button class="sm-delete-btn"><img src="resource/image/close.png" alt="Delete"></button>
+            </div>`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setProducts('cart');
+        });
+    </script>
+
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>BOOKWORMS</p>
+            <p>Kedah, Malaysia</p>
+            <p>Phone: (+60)172956188</p>
+            <p>Email: bookwormsC2001@gmail.com</p>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/profile.php?id=61561303924777" target="_blank">Facebook</a>
+            <a href="https://x.com/Bookworms26891" target="_blank">Twitter</a>
+            <div class="last-updated-container">
+                Last Updated: <span id="last-updated"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="scroll-to-top" onclick="scrollToTop()">
+            <img src="resource/icon/arrow.jpg" alt="Top arrow">
+        </button>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lastUpdatedElement = document.getElementById("last-updated");
+        let lastUpdatedDate = new Date('2024-06-24T12:00:00');
+        let formattedDate = lastUpdatedDate.toLocaleDateString("en-US", {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        lastUpdatedElement.textContent = formattedDate;
+    });
+
+    window.onscroll = function() {
+        var scrollButton = document.querySelector('.scroll-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

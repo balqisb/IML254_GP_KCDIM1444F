@@ -1,0 +1,82 @@
+<html>
+<head>
+<title> Book Description </title>
+<link type="text/css" rel="stylesheet" href="resource/css/style.css">
+</head>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+<body style="background-color:#C19A6B;">
+
+    <div class="container">
+        <div class="image-container">
+            <img src="resource/image/1.png" alt="Book Image">
+        </div>
+        <div class="padtext">
+        <h1> <li> Title: When Grumpy Met Sunshine </li><br>
+             <li>Author: Charlotte Stein </li><br>
+             <li>Date of published: February 6, 2024 </li><br>
+             <li>Genres: Romance, Fiction, Sports </li><br>
+             <li>Physical description: 336 pages, paperback </li><br>
+             <li>ISBN: 9781250867933 (ISBN10: 1250867932) </li><br>
+             <li>Language: English </li> </h1>
+
+        </div>
+    </div>           
+<div class="desc-container">
+ <p style="text-align: center;"> 
+A steamy, opposites-attract romance with undeniable chemistry between a grumpy retired footballer and his fabulous and very sunshine-y ghostwriter.<br><br>
+            When grumpy ex-footballer Alfie Harding gets badgered into selling his memoirs, he knows he’s never going to be able to write them. He hates revealing a single thing about himself, is allergic to most emotions, and can’t imagine doing a good job of putting pen to paper.<br><br>
+            And so in walks curvy, cheery, cute as heck ghostwriter Mabel Willicker, who knows just how to sunshine and sass her way into getting every little detail out of Alfie. They banter and bicker their way to writing his life story, both of them sure they’ll never be anything other than at odds.<br><br>
+            But after their business arrangement is mistaken for a budding romance, the pair have to pretend to be an item for a public who’s ravenous for more of this Cinderella story. Or at least, it feels like it’s pretend―until each slow burn step in their fake relationship sparks a heat neither can control. Now they just have to is this sizzling chemistry just for show? Or something so real it might just give them their fairytale ending?</p>
+</div>
+
+
+    <div class="btn-group">
+        <button class="btn cart-btn" onclick="addToCart()">Add to cart</button>
+    </div>
+
+<script>
+
+function addToCart(price) {
+    const product = {
+        id: '9781250867933', 
+        name: 'When Grumpy Met Sunshine',
+        sellPrice: 69.90, 
+        imageUrl: 'resource/image/1.png', 
+        item: 1 
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].item += 1;
+    } else {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Product added to cart!');
+}
+</script>
+
+
+
+</body>
+</html>

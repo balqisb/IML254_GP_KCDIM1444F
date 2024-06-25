@@ -1,0 +1,164 @@
+<html>
+<head>
+    <title>Products:Fantasy books</title>
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="resource/icon/icon2.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+<div class="sidenav">
+  <a href="products.html">All</a>
+  <a href="romance.html">Romance</a>
+  <a href="horror.html">Horror</a>
+  <a href="thriller.html">Thriller</a>
+  <a href="scifi.html">Science-fiction</a>
+  <a href="comedy.html">Comedy</a>
+  <a href="slice.html">Slice of life</a>
+  <a href="drama.html">Drama</a>
+  <a href="fantasy.html">Fantasy</a>
+  <a href="stationary.html">Stationary</a>
+
+</div>
+
+<div id="mainContent" class="main">
+<div class= "container">
+ <div class= "image-container">
+  <div class="flip-box">
+   <div class="flip-box-inner">
+    <div class="flip-box-front">
+     <img src="resource/image/7.png" alt="book">
+    </div>
+   <div class="flip-box-back">
+   <h2>The Fellowship of the Ring by J.R.R. Tolkien</h2>
+   <p>One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them. In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him....</p><br>
+    <a href="descriptionfantasy.html">More</a>
+   </div>
+   </div>
+  </div>
+ </div>
+
+<div class= "image-container">
+  <div class="flip-box">
+   <div class="flip-box-inner">
+    <div class="flip-box-front">
+     <img src="resource/image/8.png" alt="book">
+    </div>
+   <div class="flip-box-back">
+   <h2>Nirnama by Hilal Asyraf</h2>
+   <p>Seorang pendekar tanpa nama telah menjadi buah mulut ramai. Sikapnya yang ringan tulang membantu masyarakat di serata Tanah Semenanjung, dan berani menentang kezaliman orang-orang Jagat suci, membuatkan dirinya menjadi bualan rakyat. Tiada siapa tahu akan namanya. Lantas orang ramai mula menggelarnya Nirnama - Tanpa Nama. Hasil campur tangan Nirnama yang terbaru, Wilayah Ujing jajahan Kerajaan Indera Kayangan jatuh ke tangan Kerajaan Semutar Putih, membuatkan Jagat Suci, pemerintah Kerajaan Indera Kayangan, penguasa Tanah Semenanjung, semakin sangsi dengan hakikat insan bergelar Nirnama.</p><br>
+    
+   </div>
+   </div>
+  </div>
+ </div>
+
+<div class= "image-container">
+  <div class="flip-box">
+   <div class="flip-box-inner">
+    <div class="flip-box-front">
+     <img src="resource/image/9.png" alt="book">
+    </div>
+   <div class="flip-box-back">
+   <h2>The Chronicles of Narnia by C.S. Lewis</h2>
+   <p>Journeys to the end of the world, fantastic creatures, and epic battles between good and evil—what more could any reader ask for in one book? The book that has it all is The Lion, the Witch and the Wardrobe, written in 1949 by Clive Staples Lewis. But Lewis did not stop there. Six more books followed, and together they became known as The Chronicles of Narnia. For the past fifty years, The Chronicles of Narnia have transcended the fantasy genre to become part of the canon of classic literature. Each of the seven books is a masterpiece, drawing the reader into a land where magic meets reality, and the result is a fictional world whose scope has fascinated generations.</p><br>
+    
+   </div>
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+<br><br>
+
+<script>
+  function toggleNav() {
+    var sidenav = document.getElementById("mySidenav");
+    var main = document.getElementById("mainContent");
+    sidenav.classList.toggle("open");
+    main.classList.toggle("shifted");
+  }
+</script>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>BOOKWORMS</p>
+            <p>Kedah, Malaysia</p>
+            <p>Phone: (+60)172956188</p>
+            <p>Email: bookwormsC2001@gmail.com</p>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/profile.php?id=61561303924777" target="_blank">Facebook</a>
+            <a href="https://x.com/Bookworms26891" target="_blank">Twitter</a>
+            <div class="last-updated-container">
+                Last Updated: <span id="last-updated"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="scroll-to-top" onclick="scrollToTop()">
+            <img src="resource/icon/arrow.jpg" alt="Top arrow">
+        </button>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lastUpdatedElement = document.getElementById("last-updated");
+        let lastUpdatedDate = new Date('2024-06-24T12:00:00');
+        let formattedDate = lastUpdatedDate.toLocaleDateString("en-US", {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        lastUpdatedElement.textContent = formattedDate;
+    });
+
+    window.onscroll = function() {
+        var scrollButton = document.querySelector('.scroll-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

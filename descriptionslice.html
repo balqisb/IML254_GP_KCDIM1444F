@@ -1,0 +1,83 @@
+<html>
+<head>
+<title> Book Description </title>
+<link type="text/css" rel="stylesheet" href="resource/css/style.css">
+</head>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+<body style="background-color:#C19A6B;">
+
+    <div class="container">
+        <div class="image-container">
+            <img src="resource/image/10.png" alt="Book Image">
+        </div>
+        <div class="padtext">
+        <h1> <li> Title: Terima Kasih, Luka </li><br>
+             <li>Author: Hasif Rayyan </li><br>
+             <li>Date of published: February 23, 2023 </li><br>
+             <li>Genres: Slice of life </li><br>
+             <li>Physical description: 463 pages, paperback </li><br>
+             <li>ISBN: 9789672459668 </li><br>
+             <li>Language: Malay </li> 
+             <li>Price: RM 30.00 </li></h1>
+
+        </div>
+    </div>           
+<div class="desc-container">
+ <p style="text-align: center;"> 
+“Aku abah dia!”<br><br>
+“Sekarang ni baru terhegeh-hegeh nak mengaku abah. Selama ini, ada abah kisah pasal kami? Tak ada, kan?” Poji membentak, sinis.<br><br>
+Sejak pemergian ummi sejurus melahirkan Naura, hidup mereka sekeluarga berubah. Poji terpaksa mengurus rumah dan menjaga adiknya. Abah pula makin menjauh, seolah-olah tidak wujud. Hanya pulang ke rumah untuk makan dan tidur sahaja.<br><br>
+Terbeban, Poji memberontak mahu keluar dari rumah itu hingga membuatkan abahnya berang. Dek selalu tersepit dalam pergaduhan mereka, Naura semakin hari merasakan dirinya dibenci dan dilihat beban pada keluarga.<br><br>
+Hubungan antara Poji dan abah semakin tegang apabila Naura tiba-tiba menghilangkan diri. Abah langsung tidak boleh diharap! — Itu yang Poji rasakan. Sedangkan abahnya pula menyalahkan Poji kerana gagal menjaga Naura.<br><br>
+Luka yang selama ini dipendam, membuatkan masing-masing menyakiti tanpa sedar. Seandainya nyawa menjadi taruhan, masih adakah ruang untuk Poji, abah dan Naura saling memaafkan kesakitan lalu? </p>
+</div>
+
+    <div class="btn-group">
+        <button class="btn cart-btn" onclick="addToCart()">Add to cart</button>
+    </div>
+
+<script>
+
+function addToCart(price) {
+    const product = {
+        id: ' 9789672459668', 
+        name: 'Terima Kasih, Luka',
+        sellPrice: 30.00, 
+        imageUrl: 'resource/image/10.png', 
+        item: 1 
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].item += 1;
+    } else {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Product added to cart!');
+}
+</script>
+
+
+</body>
+</html>

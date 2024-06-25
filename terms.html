@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>Terms & Conditions</title>
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="resource/icon/icon7.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <div class="terms-container">
+        <section>
+            <h2>TERMS & CONDITION</h2>
+            <p>Welcome to Bookworms, the online bookstore. These terms and conditions outline the rules and regulations for the use of Bookworms's Website.</p>
+
+<p>By accessing this website we assume you accept these terms and conditions in full. Do not continue to use Bookworms's website if you do not accept all of the terms and conditions stated on this page.</p>
+
+<p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and any or all Agreements: "Client", "You" and "Your" refers to you, the person accessing this website and accepting the Company's terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves, or either the Client or ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner, whether by formal meetings of a fixed duration, or any other means, for the express purpose of meeting the Client's needs in respect of provision of the Company's stated services/products, in accordance with and subject to, prevailing law of United States. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
+        </section>
+        <section>
+            <h2>License</h2>
+            <p>Unless otherwise stated, Bookworms and/or its licensors own the intellectual property rights for all material on Bookworms. All intellectual property rights are reserved. You may view and/or print pages from Bookworms for your own personal use subject to restrictions set in these terms and conditions.</p>
+
+            <p> You must not:</p>
+
+	    <ul>
+                <li>Republish material from Bookworms.</li>
+		<li>Sell, rent or sub-license material from Bookworms.</li>
+		<li>Reproduce, duplicate or copy material from Bookworms.</li>
+		<li>Redistribute content from Bookworms (unless content is specifically made for redistribution).</li>
+            </ul>
+    </section>
+    </div>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>BOOKWORMS</p>
+            <p>Kedah, Malaysia</p>
+            <p>Phone: (+60)172956188</p>
+            <p>Email: bookwormsC2001@gmail.com</p>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/profile.php?id=61561303924777" target="_blank">Facebook</a>
+            <a href="https://x.com/Bookworms26891" target="_blank">Twitter</a>
+            <div class="last-updated-container">
+                Last Updated: <span id="last-updated"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="scroll-to-top" onclick="scrollToTop()">
+            <img src="resource/icon/arrow.jpg" alt="Top arrow">
+        </button>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lastUpdatedElement = document.getElementById("last-updated");
+        let lastUpdatedDate = new Date('2024-06-24T12:00:00');
+        let formattedDate = lastUpdatedDate.toLocaleDateString("en-US", {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        lastUpdatedElement.textContent = formattedDate;
+    });
+
+    window.onscroll = function() {
+        var scrollButton = document.querySelector('.scroll-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

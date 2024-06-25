@@ -1,0 +1,77 @@
+<html>
+<head>
+<title> Book Description </title>
+<link type="text/css" rel="stylesheet" href="resource/css/style.css">
+</head>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+<body style="background-color:#C19A6B;">
+
+    <div class="container">
+        <div class="image-container">
+            <img src="resource/image/22.png" alt="Book Image">
+        </div>
+        <div class="padtext">
+        <h1> <li> Title: Romeo and Juliet </li><br>
+             <li>Author: William Shakespeare </li><br>
+             <li>Date of published: January 1, 2002 </li><br>
+             <li>Genres: Drama, Fiction, Literature </li><br>
+             <li>Physical description: 281 pages, Mass Market paperback </li><br>
+             <li>ISBN: - </li><br>
+             <li>Language: English </li> </h1>
+
+        </div>
+    </div>           
+<div class="desc-container">
+ <p style="text-align: center;"> 
+In Romeo and Juliet, Shakespeare creates a violent world, in which two young people fall in love. It is not simply that their families disapprove; the Montagues and the Capulets are engaged in a blood feud.<br><br>
+In this death-filled setting, the movement from love at first sight to the lovers’ final union in death seems almost inevitable. And yet, this play set in an extraordinary world has become the quintessential story of young love. In part because of its exquisite language, it is easy to respond as if it were about all young lovers. </p>
+</div>
+
+    <div class="btn-group">
+        <button class="btn cart-btn" onclick="addToCart()">Add to cart</button>
+    </div>
+
+<script>
+
+function addToCart(price) {
+    const product = {
+        id: '-', 
+        name: 'Romeo and Juliet',
+        sellPrice: 47.90, 
+        imageUrl: 'resource/image/22.png', 
+        item: 1     };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].item += 1;
+    } else {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Product added to cart!');
+}
+</script>
+
+
+</body>
+</html>

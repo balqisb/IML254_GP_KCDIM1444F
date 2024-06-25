@@ -1,0 +1,109 @@
+<html>
+<head>
+<title> Book Description </title>
+<link type="text/css" rel="stylesheet" href="resource/css/style.css">
+</head>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+<body style="background-color:#C19A6B;">
+
+    <div class="container">
+        <div class="image-container">
+            <img src="resource/image/13.png" alt="Book Image">
+        </div>
+        <div class="padtext">
+        <h1> <li> Title: Kuala Terengganu in 7 Days </li><br>
+             <li>Author: Mimi Mashud </li><br>
+             <li>Date of published: December 1, 2014 </li><br>
+             <li>Genres: Comedy, Comics, Nonfiction </li><br>
+             <li>Physical description: 100 pages, paperback </li><br>
+             <li>ISBN: 9789671296806 (ISBN10: 9671296807) </li><br>
+             <li>Language: English </li> 
+             <li>Language:  </li> </h1>
+
+        </div>
+    </div>           
+<div class="desc-container">
+ <p style="text-align: center;"> 
+Mimi Mashud is a freelance illustrator. Kuala Terengganu in 7 Days is her second travelogue-comic. </p>
+</div>
+
+
+    <div class="btn-group">
+        <button class="btn cart-btn" onclick="addToCart()">Add to cart</button>
+    </div>
+
+<script>
+
+function addToCart(price) {
+    const product = {
+        id: '9789671296806', 
+        name: 'Kuala Terengganu in 7 Days',
+        sellPrice: 25.00,
+        imageUrl: 'resource/image/13.png', 
+        item: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].item += 1;
+    } else {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Product added to cart!');
+}
+</script>
+
+
+    <div class="btn-group">
+        <button class="btn cart-btn" onclick="addToCart()">Add to cart</button>
+    </div>
+
+<script>
+
+function addToCart(price) {
+    const product = {
+        id: '9781250867933', // Unique identifier for the product (ISBN used here)
+        name: 'When Grumpy Met Sunshine',
+        sellPrice: 69.90, // Price of the book (passed as parameter)
+        imageUrl: 'resource/image/1.jpg', // URL of the book image
+        item: 1 // Initial quantity
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].item += 1;
+    } else {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Product added to cart!');
+}
+</script>
+
+
+</body>
+</html>

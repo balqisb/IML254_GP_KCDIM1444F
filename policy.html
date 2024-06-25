@@ -1,0 +1,122 @@
+<html>
+<head>
+    <title>Privacy Policy</title>
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="resource/icon/icon6.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+
+    <div class="policy-container">
+        <section>
+            <h2>PRIVACY POLICY</h2>
+            <p>Welcome to Bookworms. We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or purchase our products.</p>
+        </section>
+        <section>
+            <h2>2. Information We Collect</h2>
+            <p>We may collect and process the following types of information:</p>
+            <ul>
+                <li>Personal Identification Information: Name, email address, phone number, shipping address, and payment information.</li>
+                <li>Account Information: Username, password, and other credentials for accessing our services.</li>
+                <li>Transaction Information: Details about purchases, order history, and payment methods.</li>
+                <li>Technical Data: IP address, browser type and version, time zone setting, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
+                <li>Usage Data: Information about how you use our website, products, and services.</li>
+                <li>Marketing and Communications Data: Preferences in receiving marketing from us and your communication preferences.</li>
+            </ul>
+	    <h2>3. How We Use Your Information</h2>
+            <p>We use the information we collect in the following ways:</p>
+		<li>To process and fulfill your orders, including managing payments, fees, and charges.</li>
+		<li>To manage your account and provide customer service.</li>
+		<li>To improve our website, products, and services.</li>
+		<li>To communicate with you about your account, purchases, and updates.</li>
+		<li>To comply with legal obligations and enforce our policies and terms of service.</li>
+	    </ul>
+        </section>
+    </div>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>BOOKWORMS</p>
+            <p>Kedah, Malaysia</p>
+            <p>Phone: (+60)172956188</p>
+            <p>Email: bookwormsC2001@gmail.com</p>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/profile.php?id=61561303924777" target="_blank">Facebook</a>
+            <a href="https://x.com/Bookworms26891" target="_blank">Twitter</a>
+            <div class="last-updated-container">
+                Last Updated: <span id="last-updated"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="scroll-to-top" onclick="scrollToTop()">
+            <img src="resource/icon/arrow.jpg" alt="Top arrow">
+        </button>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lastUpdatedElement = document.getElementById("last-updated");
+        let lastUpdatedDate = new Date('2024-06-24T12:00:00');
+        let formattedDate = lastUpdatedDate.toLocaleDateString("en-US", {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        lastUpdatedElement.textContent = formattedDate;
+    });
+
+    window.onscroll = function() {
+        var scrollButton = document.querySelector('.scroll-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+
+</body>
+</html>
