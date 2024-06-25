@@ -1,0 +1,144 @@
+<html>
+<head>
+    <title>Products:Stationaries</title>
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="resource/icon/icon2.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">BOOKWORMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li class="dropdown">
+      		<a href="aboutus.html" class="dropbtn">About Us</a>
+      		<div class="dropdown-content">
+        	    <a href="group.html">Group</a>
+		</div>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+            <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+<div class="sidenav">
+  <a href="products.html">All</a>
+  <a href="romance.html">Romance</a>
+  <a href="horror.html">Horror</a>
+  <a href="thriller.html">Thriller</a>
+  <a href="#scifi.html">Science-fiction</a>
+  <a href="comedy.html">Comedy</a>
+  <a href="slice.html">Slice of life</a>
+  <a href="drama.html">Drama</a>
+  <a href="fantasy.html">Fantasy</a>
+  <a href="stationary.html">Stationary</a>
+
+</div>
+
+
+<div id="mainContent" class="main">
+<div class="row">
+  <div class="column">
+    <img src="resource/image/c.png" alt="note book" style="width:100%"> FOLDERMATE WEWRITE README SPIRAL NOTE BOOK A5
+  </div>
+  <div class="column">
+    <img src="resource/image/a.png" alt="calculator" style="width:100%"> CASIO SCIENTIFIC CALCULATOR FX-570MS-2
+  </div>
+  <div class="column">
+    <img src="resource/image/b.png" alt="correction tape" style="width:100%">  PLUS MR2 CORRECTION TAPE WITH 2'S WHIPER ME CORRECTION TAPE 5MMX6M BLUE
+  </div>
+  <div class="column">
+    <img src="resource/image/h.png" alt="scissors" style="width:100%"> PLUS FITCUT FLUORINE COATED KID'S SCISSORS SC-145P BLUE
+  </div>
+</div><br><br>
+
+<div class="row">
+  <div class="column">
+    <img src="resource/image/f.png" alt="pencils" style="width:100%"> STAEDTLER MARS LUMOGRAPH PENCIL 5 DEGREES SET
+  </div>
+  <div class="column">
+    <img src="resource/image/e.png" alt="pen" style="width:100%"> STAEDTLER 4274 RETRACTABLE BALL PEN FINE 0.7MM 3PCS
+  </div>
+  <div class="column">
+    <img src="resource/image/d.png" alt="pen" style="width:100%"> STAEDTLER 432 BALL PEN MEDIUM 1.0MM 4PCS ASSORTED
+  </div>
+  <div class="column">
+    <img src="resource/image/g.png" alt="ruler" style="width:100%"> ACRYLIC RULER
+  </div>
+</div>
+</div>
+
+
+<br><br>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>BOOKWORMS</p>
+            <p>Kedah, Malaysia</p>
+            <p>Phone: (+60)172956188</p>
+            <p>Email: bookwormsC2001@gmail.com</p>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/profile.php?id=61561303924777" target="_blank">Facebook</a>
+            <a href="https://x.com/Bookworms26891" target="_blank">Twitter</a>
+            <div class="last-updated-container">
+                Last Updated: <span id="last-updated"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="scroll-to-top" onclick="scrollToTop()">
+            <img src="resource/icon/arrow.jpg" alt="Top arrow">
+        </button>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lastUpdatedElement = document.getElementById("last-updated");
+        let lastUpdatedDate = new Date('2024-06-24T12:00:00');
+        let formattedDate = lastUpdatedDate.toLocaleDateString("en-US", {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        lastUpdatedElement.textContent = formattedDate;
+    });
+
+    window.onscroll = function() {
+        var scrollButton = document.querySelector('.scroll-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+
+</body>
+</html>
